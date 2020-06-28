@@ -206,12 +206,16 @@ insert into PAIS (cod_pais, nombre) values (5,'Italia');
 insert into PAIS (cod_pais, nombre) values (6,'Brasil');
 insert into PAIS (cod_pais, nombre) values (7,'Estados Unidos');
 
-insert into MIEMBRO values (1,'Scott','Mitchell',32,null,'1092 Highland Drive Manitowoc, WI 54220',7,3);
+
+insert into MIEMBRO (cod_miembro, nombre, apellido,edad,residencia,PAIS_cod_pais, PROFESION_cod_prof)
+values (10,'Scott','Mitchell',32,'1092 Highland Drive Manitowoc, WI 54220',7,3);
 insert into MIEMBRO values (2,'Fanette','poulin',25,2507853,'49, boulevard Aristide Briand 76120 LE GRAND-QUEVILLY',2,4);
-insert into MIEMBRO values (3,'Laura','Cunha Silva',55,null,'Rua Onze, 86 Uberaba-MG',6,5);
+insert into MIEMBRO (cod_miembro, nombre, apellido,edad,residencia,PAIS_cod_pais, PROFESION_cod_prof) 
+values (3,'Laura','Cunha Silva',55,'Rua Onze, 86 Uberaba-MG',6,5);
 insert into MIEMBRO values (4,'Juan José','López',38,36985247,'26 calle 4-10 zona 11',1,2);
 insert into MIEMBRO values (5,'Arcangela','Panicucci',39,391664921,'Via Santa Teresa, 11490010-Geraci Siculo Pa',5,1);
-insert into MIEMBRO values (6,'Jeuel', 'Villalpando',31,null,'Acuña de Figeroa 610680101 Playa Pascual',3,5);
+insert into MIEMBRO (cod_miembro, nombre, apellido,edad,residencia,PAIS_cod_pais, PROFESION_cod_prof)
+values (6,'Jeuel', 'Villalpando',31,'Acuña de Figeroa 610680101 Playa Pascual',3,5);
 
 insert into DISCIPLINA values (1,'Atletismo','Saltos de longitud y triples, de altura y con pértiga o garrocha; las pruebas de lanzamiento de martillo, jabalina y disco.');
 insert into DISCIPLINA values (2,'Bádminton',null);

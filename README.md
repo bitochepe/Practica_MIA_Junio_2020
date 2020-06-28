@@ -6,4 +6,4 @@ Existe un script por cada inciso asi como un script que contiene todos los query
 
 Explicacion dentro del siguiente video:
 
-https://youtu.be/Js0lh4OIMTw
+https://youtu.be/3sTaTYhFMQU
