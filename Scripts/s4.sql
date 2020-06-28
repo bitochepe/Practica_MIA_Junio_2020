@@ -1,5 +1,6 @@
 -- ---------------------------------Juan Jose Hernandez Rodriguez, 201612378----------------------------------------------------------
 
+
 -- 4) Se decidió que las ubicación de los eventos se registrarán previamente en una tabla y que en la tabla “Evento” sólo se almacenara la llave foránea
 -- según el código del registro de la ubicación, para esto debe realizar lo siguiente: 
 

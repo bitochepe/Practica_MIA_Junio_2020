@@ -4,4 +4,3 @@
 -- que no tengan número telefónico se le ingrese el número por Default 0 al momento de ser cargados a la base de datos. 
 
 alter table MIEMBRO alter column telefono set default 0;
-

@@ -53,7 +53,7 @@ create table PUESTO_MIEMBRO (
   fecha_inicio date not null,
   fecha_fin date null,
 
-  primary key (MIEMBRO_cod_miembro, PEUSTO_cod_puesto, DEPARTAMENTO_cod_depto),
+  primary key (MIEMBRO_cod_miembro, PUESTO_cod_puesto, DEPARTAMENTO_cod_depto),
   foreign key (MIEMBRO_cod_miembro) references MIEMBRO (cod_miembro),
   foreign key (PUESTO_cod_puesto) references PUESTO (cod_puesto),
   foreign key (DEPARTAMENTO_cod_depto) references DEPARTAMENTO (cod_depto)
@@ -193,13 +193,13 @@ insert into PROFESION (cod_prof, nombre) values (3,'Ingeniero');
 insert into PROFESION (cod_prof, nombre) values (4,'Secretaria');
 insert into PROFESION (cod_prof, nombre) values (5,'Auditor');
 
-insert into PAIS (cod_prof, nombre) values (1,'Guatemala');
-insert into PAIS (cod_prof, nombre) values (1,'Francia');
-insert into PAIS (cod_prof, nombre) values (1,'Argentina');
-insert into PAIS (cod_prof, nombre) values (1,'Alemania');
-insert into PAIS (cod_prof, nombre) values (1,'Italia');
-insert into PAIS (cod_prof, nombre) values (1,'Brasil');
-insert into PAIS (cod_prof, nombre) values (1,'Estados Unidos');
+insert into PAIS (cod_pais, nombre) values (1,'Guatemala');
+insert into PAIS (cod_pais, nombre) values (2,'Francia');
+insert into PAIS (cod_pais, nombre) values (3,'Argentina');
+insert into PAIS (cod_pais, nombre) values (4,'Alemania');
+insert into PAIS (cod_pais, nombre) values (5,'Italia');
+insert into PAIS (cod_pais, nombre) values (6,'Brasil');
+insert into PAIS (cod_pais, nombre) values (7,'Estados Unidos');
 
 insert into MIEMBRO values (1,'Scott','Mitchell',32,null,'1092 Highland Drive Manitowoc, WI 54220',7,3);
 insert into MIEMBRO values (2,'Fanette','poulin',25,2507853,'49, boulevard Aristide Briand 76120 LE GRAND-QUEVILLY',2,4);
@@ -260,8 +260,8 @@ insert into EVENTO values(5,4,10,3,1,'08 august 2020 19:35:00');
 -- eliminar la restricción “UNIQUE” de las siguientes tablas:
 
 alter table PAIS drop constraint pais_nombre_key;
-alter table TIPO_MEDALLA add constraint tipo_medalla_medalla_key;
-alter table DEPARTAMENTO add constraint departamento_nombre_key;
+alter table TIPO_MEDALLA drop constraint tipo_medalla_medalla_key;
+alter table DEPARTAMENTO drop constraint departamento_nombre_key;
 
 
 -- 8) Después de un análisis más profundo se decidió que los Atletas pueden participar en varias disciplinas y no sólo en una como está reflejado
@@ -285,7 +285,7 @@ alter table COSTO_EVENTO alter column tarifa type numeric(6,2);
 
 
 -- 10) Generar el Script que borre de la tabla “Tipo_Medalla”, el registro siguiente:
-delete from MEDALLERO where cod_tipo = 4;
+delete from MEDALLERO where TIPO_MEDALLA_cod_tipo = 4;
 delete from TIPO_MEDALLA where cod_tipo = 4;
 
 
@@ -300,9 +300,19 @@ drop table televisora;
 -- 12) El comité olímpico quiere replantear las disciplinas que van a llevarse a cabo, por lo cual pide generar el script que elimine todos los registros contenidos
 -- en la tabla “DISCIPLINA”
 
-alter table EVENTO drop cod_disciplina;  -- se eiliminan todos los registros de cod_disciplina en eventos
+alter table EVENTO drop column DISCIPLINA_cod_disciplina;
+
+alter table DISCIPLINA_ATLETA drop column DISCIPLINA_cod_disciplina;
+
 truncate table DISCIPLINA;
 
+alter table EVENTO add DISCIPLINA_cod_disciplina integer null;
+alter table EVENTO add constraint evento_disciplina_cod_disciplina_key 
+foreign key (DISCIPLINA_cod_disciplina) references DISCIPLINA(cod_disciplina);
+
+alter table DISCIPLINA_ATLETA add DISCIPLINA_cod_disciplina integer null;
+alter table DISCIPLINA_ATLETA add constraint disciplina_atleta_disciplina_cod_disciplina_key 
+foreign key (DISCIPLINA_cod_disciplina) references DISCIPLINA(cod_disciplina);
 
 -- 13) Los miembros que no tenían registrado su número de teléfono en sus perfiles fueron notificados, por lo que se acercaron a las instalaciones de
 -- Comité para actualizar sus datos.

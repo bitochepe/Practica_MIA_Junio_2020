@@ -53,7 +53,7 @@ create table PUESTO_MIEMBRO (
   fecha_inicio date not null,
   fecha_fin date null,
 
-  primary key (MIEMBRO_cod_miembro, PEUSTO_cod_puesto, DEPARTAMENTO_cod_depto),
+  primary key (MIEMBRO_cod_miembro, PUESTO_cod_puesto, DEPARTAMENTO_cod_depto),
   foreign key (MIEMBRO_cod_miembro) references MIEMBRO (cod_miembro),
   foreign key (PUESTO_cod_puesto) references PUESTO (cod_puesto),
   foreign key (DEPARTAMENTO_cod_depto) references DEPARTAMENTO (cod_depto)

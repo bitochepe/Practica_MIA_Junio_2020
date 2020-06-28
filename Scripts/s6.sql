@@ -8,13 +8,13 @@ insert into PROFESION (cod_prof, nombre) values (3,'Ingeniero');
 insert into PROFESION (cod_prof, nombre) values (4,'Secretaria');
 insert into PROFESION (cod_prof, nombre) values (5,'Auditor');
 
-insert into PAIS (cod_prof, nombre) values (1,'Guatemala');
-insert into PAIS (cod_prof, nombre) values (1,'Francia');
-insert into PAIS (cod_prof, nombre) values (1,'Argentina');
-insert into PAIS (cod_prof, nombre) values (1,'Alemania');
-insert into PAIS (cod_prof, nombre) values (1,'Italia');
-insert into PAIS (cod_prof, nombre) values (1,'Brasil');
-insert into PAIS (cod_prof, nombre) values (1,'Estados Unidos');
+insert into PAIS (cod_pais, nombre) values (1,'Guatemala');
+insert into PAIS (cod_pais, nombre) values (2,'Francia');
+insert into PAIS (cod_pais, nombre) values (3,'Argentina');
+insert into PAIS (cod_pais, nombre) values (4,'Alemania');
+insert into PAIS (cod_pais, nombre) values (5,'Italia');
+insert into PAIS (cod_pais, nombre) values (6,'Brasil');
+insert into PAIS (cod_pais, nombre) values (7,'Estados Unidos');
 
 insert into MIEMBRO values (1,'Scott','Mitchell',32,null,'1092 Highland Drive Manitowoc, WI 54220',7,3);
 insert into MIEMBRO values (2,'Fanette','poulin',25,2507853,'49, boulevard Aristide Briand 76120 LE GRAND-QUEVILLY',2,4);

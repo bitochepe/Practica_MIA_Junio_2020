@@ -1,5 +1,6 @@
 -- ---------------------------------Juan Jose Hernandez Rodriguez, 201612378----------------------------------------------------------
 
+
 -- 8) Después de un análisis más profundo se decidió que los Atletas pueden participar en varias disciplinas y no sólo en una como está reflejado
 -- actualmente en las tablas, por lo que se pide que realice lo siguiente.
 
@@ -14,3 +15,4 @@ create table  DISCIPLINA_ATLETA (
   foreign key (ATLETA_cod_atleta) references ATLETA (cod_atleta),
   foreign key (DISCIPLINA_cod_disciplina) references DISCIPLINA (cod_disciplina)
 );
+
